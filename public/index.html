@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="/s/jquery-1.11.1.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script>
+        function check() {
+            console.log("running");
+           /* $.ajax({
+                type: "GET",
+                data: "http://experiments-cs5610fall14.rhcloud.com/getAllUsers",
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function () {
+                    alert("Opps !! Something went wrong");
+                }
+            });*/
+            var ary = [];
+            ary.push("a");
+            ary.push("b");
+            ary.push("c");
+            console.log(ary);
+            $.ajax({
+                dataType: "json",
+                url: "http://experiments-cs5610fall14.rhcloud.com/check/" + ary,
+                success: function (data) { console.log(data);}
+            });
+        }
+    </script>
+    <style>
+  .mainDiv {
+    text-align:center;
+
+}
+
+.sub-container {
+    top : 50%;
+    width: 50%;
+    height: 50%;
+    border: 1px solid darkgray;
+    display: inline-block;
+    background-color:lightgray;
+    vertical-align : central;
+    margin-top : 200px;
+    padding : 20px;
+}
+.signIn {
+    margin-top : 20px;
+}
+.anchors {
+    margin-top : 20px;
+    padding : 10px;
+}
+.signUp {
+    float : right;
+}
+.forgorPsw {
+    float : left;
+}
+    </style>
+
+
+</head>
+<body>
+   <div class="container mainDiv">
+<div>Experiments : Dummy Page no functionality !!</div>
+       <div class="sub-container">
+           <input type="text" class="form-control username" placeholder="User Name" />
+           <input type="password" class="form-control password" placeholder="Password"/>
+           <input type="button" class="btn btn-primary btn-block signIn" value="Sign In" />
+           <div class="anchors">
+               <a class="forgorPsw" href="#">Forgot Password?</a>
+               <a class="signUp" href="register.html">Sign Up</a>
+               <a class="freeTry" href="#">Continue with trial version</a>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
